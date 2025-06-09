@@ -79,6 +79,13 @@ struct Scalar[dtype: DType](TSIMD, EqualityComparable, Comparable):
         """Initialize from a UInt value."""
         self.value = SIMD[dtype, 1](value)
 
+    fn __init__(out self, value: Bool):
+        """Initialize from a Bool value."""
+        if value:
+            self.value = SIMD[dtype, 1](1)
+        else:
+            self.value = SIMD[dtype, 1](0)
+
     # EqualityComparable trait methods with Bool return types
     fn __eq__(self, other: Self) -> Bool:
         """Compare for equality, returning a single Bool value."""
