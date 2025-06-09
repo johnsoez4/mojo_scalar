@@ -6,7 +6,12 @@ UInt64 Error Demonstration
 This file demonstrates the issue with UInt64 types in Mojo and shows how
 the Scalar implementation from the mojo_scalar library solves it.
 
-Run with: mojo uint64_demo.mojo
+To run this example:
+1. Copy scalar.mojo to this directory: cp ../scalar.mojo .
+2. Run: mojo uint64_demo.mojo
+3. Clean up: rm scalar.mojo
+
+Or use the provided script: ./run_demo.sh
 """
 
 from scalar import ScalarInt64 as UInt64, ScalarBool
