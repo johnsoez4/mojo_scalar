@@ -39,6 +39,7 @@ trait TSIMD(
     Representable,
     Hashable,
     Boolable,
+    Writable,
 ):
     """Trait that encompasses the main traits implemented by SIMD."""
 
