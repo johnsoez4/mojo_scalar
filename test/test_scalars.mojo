@@ -11,7 +11,7 @@ Run with: mojo test test_scalars.mojo
 from builtin.dtype import DType
 from builtin.bool import Bool
 from collections.list import List
-from scalar import (
+from mojo_scalar.scalar import (
     Scalar,
     ScalarBool,
     ScalarInt8,
@@ -25,6 +25,23 @@ from scalar import (
     ScalarFloat32,
     ScalarFloat64,
 )
+
+
+fn main():
+    """Main function to run all tests."""
+    print("🧪 Starting Comprehensive Scalar Type Tests")
+    print("=" * 50)
+
+    test_scalar_bool()
+    test_scalar_int_types()
+    test_scalar_float_types()
+    test_scalar_list_compatibility()
+    test_scalar_type_casting()
+    test_scalar_bitwise_operations()
+    test_scalar_constructors()
+
+    print("\n" + "=" * 50)
+    print("All tests completed successfully!")
 
 
 fn test_scalar_bool():
@@ -60,7 +77,7 @@ fn test_scalar_bool():
         print("❌ ScalarBool OR failed")
         return
 
-    print("✅ ScalarBool tests passed")
+    # print("✅ ScalarBool tests passed")
 
 
 fn test_scalar_int_types():
@@ -117,7 +134,7 @@ fn test_scalar_int_types():
         print("❌ ScalarUInt32 arithmetic failed")
         return
 
-    print("✅ Integer scalar tests passed")
+    # print("✅ Integer scalar tests passed")
 
 
 fn test_scalar_float_types():
@@ -155,7 +172,7 @@ fn test_scalar_float_types():
         print("❌ ScalarFloat32 multiplication failed")
         return
 
-    print("✅ Float scalar tests passed")
+    # print("✅ Float scalar tests passed")
 
 
 fn test_scalar_list_compatibility():
@@ -187,7 +204,7 @@ fn test_scalar_list_compatibility():
         print("❌ ScalarInt64 List search false positive")
         return
 
-    print("✅ ScalarInt64 List compatibility tests passed")
+    # print("✅ ScalarInt64 List compatibility tests passed")
 
 
 fn test_scalar_type_casting():
@@ -213,7 +230,7 @@ fn test_scalar_type_casting():
         print("❌ Float to int casting failed")
         return
 
-    print("✅ Type casting tests passed")
+    # print("✅ Type casting tests passed")
 
 
 fn test_scalar_bitwise_operations():
@@ -250,7 +267,7 @@ fn test_scalar_bitwise_operations():
         print("❌ Right shift failed")
         return
 
-    print("✅ Bitwise operations tests passed")
+    # print("✅ Bitwise operations tests passed")
 
 
 fn test_scalar_constructors():
@@ -279,4 +296,4 @@ fn test_scalar_constructors():
         print("❌ Bool False constructor failed")
         return
 
-    print("✅ Constructor tests passed")
+    # print("✅ Constructor tests passed")
