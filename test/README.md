@@ -1,8 +1,25 @@
 # mojo_scalar Test Suite
 
-This directory contains comprehensive tests for all scalar types in the mojo_scalar library, following Modular's testing practices with optimized code reuse.
+This directory contains comprehensive tests for all scalar types in the mojo_scalar library, following **Mojo standard testing conventions** with `test_` prefixed functions that work with the `mojo test` command.
+
+## Test Structure
+
+The test suite follows Mojo's standard testing conventions:
+- **Test functions** are prefixed with `test_` for automatic discovery
+- **Uses `mojo test` command** for running tests
+- **Built-in assertions** with descriptive error messages
+- **Modular test organization** for better maintainability
 
 ## Test Coverage
+
+### ✅ **Test Functions**
+- `test_scalar_bool()` - Boolean scalar operations and bitwise logic
+- `test_scalar_int_types()` - Integer arithmetic and comparisons
+- `test_scalar_float_types()` - Floating-point operations
+- `test_scalar_list_compatibility()` - Container compatibility (main library goal)
+- `test_scalar_type_casting()` - Cross-type conversions
+- `test_scalar_bitwise_operations()` - Bitwise and shift operations
+- `test_scalar_constructors()` - Constructor patterns and validation
 
 The test suite covers:
 
@@ -32,14 +49,14 @@ The test suite covers:
    - AND (`&`), OR (`|`), XOR (`^`)
    - NOT (`~`), Left Shift (`<<`), Right Shift (`>>`)
 
-5. **Container Compatibility**
+5. **Container Compatibility** ⭐ **Main Library Goal**
    - `List[Scalar[dtype]]` operations
    - Append, search, length operations
-   - Demonstrates the main problem solved by this library
+   - Demonstrates the core problem solved by this library
 
 6. **Type Casting**
    - `cast[target_dtype]()` method
-   - Cross-type conversions
+   - Cross-type conversions between different scalar types
 
 ## Running Tests
 
@@ -48,16 +65,23 @@ The test suite covers:
 ./run_tests.sh
 ```
 
-### Manual Test
+### Using Mojo Test Command
 ```bash
 # Copy scalar.mojo to test directory
 cp ../scalar.mojo .
 
-# Run tests
-mojo test_scalars.mojo
+# Run tests using Mojo standard testing
+mojo test test_scalars.mojo
 
 # Clean up
 rm scalar.mojo
+```
+
+### Direct Function Testing
+```bash
+# Run individual test functions
+mojo test test_scalars.mojo::test_scalar_bool
+mojo test test_scalars.mojo::test_scalar_list_compatibility
 ```
 
 ## Test Results
