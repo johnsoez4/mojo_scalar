@@ -80,7 +80,7 @@ Simply copy `scalar.mojo` to your project and import the types you need.
 
 ## License
 
-MIT License - see LICENSE file for details.
+Apache-2.0 License - see LICENSE file for details.
 
 ## Contributing
 
