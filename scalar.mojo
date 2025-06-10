@@ -11,6 +11,8 @@ from builtin.dtype import DType
 from builtin.comparable import Comparable
 from builtin.equality_comparable import EqualityComparable
 from builtin.bool import Bool
+from builtin.floatable import Floatable
+from collections.dict import KeyElement
 
 # Type aliases for all DType scalar types
 alias ScalarBool = Scalar[DType.bool]
@@ -35,6 +37,7 @@ alias ScalarFloat64 = Scalar[DType.float64]
 trait TSIMD(
     Copyable,
     Movable,
+    Floatable,
     Stringable,
     Representable,
     Hashable,
@@ -46,12 +49,17 @@ trait TSIMD(
     pass
 
 
-struct Scalar[dtype: DType](TSIMD, EqualityComparable, Comparable):
+struct Scalar[dtype: DType](
+    TSIMD,
+    EqualityComparable,
+    Comparable,
+    KeyElement,
+):
     """
     A scalar value that wraps SIMD[dtype, 1] and provides enhanced trait support.
 
-    This struct implements all SIMD traits plus EqualityComparable and Comparable
-    with proper Bool return types for comparison operations.
+    This struct implements all SIMD traits plus EqualityComparable, Comparable,
+    and KeyElement with proper Bool return types for comparison operations.
 
     Parameters:
         dtype: The data type of the scalar value.
